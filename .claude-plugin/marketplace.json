@@ -1,0 +1,12 @@
+{
+  "name": "doug-marketplace",
+  "metadata": {
+    "description": "Doug's personal Claude Code plugin collection",
+    "version": "1.0.0"
+  },
+  "owner": {
+    "name": "Doug Hughes",
+    "email": "doug.hughes@ezcater.com"
+  },
+  "plugins": []
+}
