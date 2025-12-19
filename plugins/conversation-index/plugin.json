@@ -1,0 +1,25 @@
+{
+  "name": "conversation-index",
+  "version": "0.1.0",
+  "description": "Indexes Claude Code conversations and provides searchable history",
+  "author": "Doug Hughes",
+  "hooks": {
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/indexer.sh",
+            "description": "Incrementally index new conversation content"
+          }
+        ]
+      }
+    ]
+  },
+  "agents": ["agents/search-agent.md"],
+  "skills": ["skills/conversation-search"],
+  "install": {
+    "command": "./scripts/install.sh",
+    "description": "Initialize conversation index database"
+  }
+}

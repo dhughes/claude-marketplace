@@ -1,0 +1,27 @@
+# Node modules
+node_modules/
+package-lock.json
+
+# Plugin-specific
+plugins/*/node_modules/
+plugins/*/package-lock.json
+
+# Database files (users will create their own)
+*.db
+*.db-shm
+*.db-wal
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
