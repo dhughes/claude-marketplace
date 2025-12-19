@@ -1,6 +1,6 @@
 {
   "name": "conversation-index",
-  "version": "0.2.8",
+  "version": "0.3.0",
   "description": "Index and search conversations in Claude Code using SQLite FTS5",
   "author": {
     "name": "Doug Hughes",
@@ -8,6 +8,5 @@
   },
   "license": "MIT",
   "keywords": ["search", "conversation", "index", "fts", "history"],
-  "agents": ["./agents/search-agent.md"],
   "skills": "./skills"
 }
