@@ -8,5 +8,15 @@
     "name": "Doug Hughes",
     "email": "doug.hughes@ezcater.com"
   },
-  "plugins": []
+  "plugins": [
+    {
+      "name": "conversation-index",
+      "source": "./plugins/conversation-index",
+      "description": "Search through indexed Claude Code conversation history to find past conversations",
+      "version": "0.1.0",
+      "author": {
+        "name": "Doug Hughes"
+      }
+    }
+  ]
 }
