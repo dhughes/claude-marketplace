@@ -173,21 +173,24 @@ function indexConversation(db, conversationPath, projectPath, encodedPath) {
   // Get or create conversation record
   let conversation = db.prepare('SELECT * FROM conversations WHERE uuid = ?').get(uuid);
 
+  // Parse first line to get creation timestamp
+  let createdAt = conversation?.created_at || new Date().toISOString();
   if (!conversation) {
-    // Parse first line to get creation timestamp
-    let createdAt = new Date().toISOString();
     try {
       const firstEntry = JSON.parse(lines[0]);
       createdAt = firstEntry.timestamp || createdAt;
     } catch (e) {}
-
-    db.prepare(`
-      INSERT INTO conversations (uuid, project_path, encoded_path, created_at, last_updated, message_count)
-      VALUES (?, ?, ?, ?, ?, 0)
-    `).run(uuid, projectPath, encodedPath, createdAt, lastModified);
-  } else {
-    db.prepare('UPDATE conversations SET last_updated = ? WHERE uuid = ?').run(lastModified, uuid);
   }
+
+  // Use UPSERT to handle race conditions and rollbacks
+  db.prepare(`
+    INSERT INTO conversations (uuid, project_path, encoded_path, created_at, last_updated, message_count)
+    VALUES (?, ?, ?, ?, ?, COALESCE((SELECT message_count FROM conversations WHERE uuid = ?), 0))
+    ON CONFLICT(uuid) DO UPDATE SET
+      project_path = excluded.project_path,
+      encoded_path = excluded.encoded_path,
+      last_updated = excluded.last_updated
+  `).run(uuid, projectPath, encodedPath, createdAt, lastModified, uuid);
 
   // Index new lines
   const insertMessage = db.prepare(`
