@@ -173,13 +173,20 @@ function indexConversation(db, conversationPath, projectPath, encodedPath) {
   // Get or create conversation record
   let conversation = db.prepare('SELECT * FROM conversations WHERE uuid = ?').get(uuid);
 
-  // Parse first line to get creation timestamp
+  // Parse first line to get creation timestamp and actual project path
   let createdAt = conversation?.created_at || new Date().toISOString();
+  let actualProjectPath = projectPath; // fallback to decoded path
+
   if (!conversation) {
     try {
       const firstEntry = JSON.parse(lines[0]);
       createdAt = firstEntry.timestamp || createdAt;
+      // Extract actual cwd from JSONL - this is the accurate project path
+      actualProjectPath = firstEntry.cwd || projectPath;
     } catch (e) {}
+  } else {
+    // Use existing project path from database
+    actualProjectPath = conversation.project_path;
   }
 
   // Use UPSERT to handle race conditions and rollbacks
@@ -190,7 +197,7 @@ function indexConversation(db, conversationPath, projectPath, encodedPath) {
       project_path = excluded.project_path,
       encoded_path = excluded.encoded_path,
       last_updated = excluded.last_updated
-  `).run(uuid, projectPath, encodedPath, createdAt, lastModified, uuid);
+  `).run(uuid, actualProjectPath, encodedPath, createdAt, lastModified, uuid);
 
   // Index new lines
   const insertMessage = db.prepare(`

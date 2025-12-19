@@ -66,7 +66,7 @@ Present results based on user query:
 ```
 Found N conversation(s) about [query]:
 
-1. UUID: abc-123
+1. Conversation ID: abc-123
    Project: /path/to/project (only if all_projects)
    Date: Dec 19, 2025 at 10:30 AM
    Messages: 42
@@ -75,9 +75,14 @@ Found N conversation(s) about [query]:
 [If many results] ...and X more conversations
 ```
 
+**Important formatting notes:**
+- Use "Conversation ID:" instead of "UUID:" for better readability
+- Include Project only when searching all_projects
+- Format date as human-readable (e.g., "Dec 19, 2025 at 10:30 AM")
+
 ### 5. Help User Resume Conversations
 
-Remind users they can use `/continue <uuid>` to resume any conversation.
+Remind users they can use `/continue <conversation-id>` to resume any conversation.
 
 ## Examples
 

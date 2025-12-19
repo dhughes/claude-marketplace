@@ -31,6 +31,7 @@ function search(query, scope = 'current_project', currentProject = null, limit =
     SELECT
       c.uuid,
       c.project_path,
+      c.encoded_path,
       c.created_at,
       c.last_updated,
       c.message_count,
@@ -76,6 +77,7 @@ function search(query, scope = 'current_project', currentProject = null, limit =
     return {
       uuid: result.uuid,
       project_path: result.project_path,
+      encoded_path: result.encoded_path,
       created_at: result.created_at,
       last_updated: result.last_updated,
       message_count: result.message_count,
