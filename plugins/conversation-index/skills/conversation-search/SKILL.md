@@ -1,6 +1,6 @@
 ---
 name: conversation-search
-description: Search through indexed Claude Code conversation history to find past conversations. Use when user asks about finding, recalling, or searching for previous conversations, discussions, or topics.
+description: Search indexed conversation history to find past conversations, locate when topics were discussed, or identify which project conversations occurred in. Use when user asks questions like "when did we discuss X?", "find conversations about Y", "in which project did we talk about Z?", or "show me conversations mentioning W". Works across all projects or within current project.
 allowed-tools: Task
 ---
 
