@@ -1,6 +1,6 @@
 {
   "name": "conversation-index",
-  "version": "1.0.0",
+  "version": "0.2.0",
   "description": "Index and search conversations in Claude Code using SQLite FTS5",
   "author": {
     "name": "Doug Hughes",
@@ -9,5 +9,9 @@
   "license": "MIT",
   "keywords": ["search", "conversation", "index", "fts", "history"],
   "hooks": "./hooks/hooks.json",
-  "skills": "./skills"
+  "agents": "./agents",
+  "skills": "./skills",
+  "install": {
+    "command": "${CLAUDE_PLUGIN_ROOT}/scripts/install.sh"
+  }
 }
