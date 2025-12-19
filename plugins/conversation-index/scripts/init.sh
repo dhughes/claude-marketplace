@@ -25,7 +25,7 @@ if [ ! -d "node_modules/better-sqlite3" ]; then
 {
   "hookSpecificOutput": {
     "hookEventName": "SessionStart",
-    "additionalContext": "conversation-index plugin initialized on first run:\n- Installed better-sqlite3 dependency\n- Built conversation index\n- Ready to search conversation history\n\n${INDEX_OUTPUT}\n\nUsers can now ask: 'when did we first discuss X?' or 'find conversations about Y'"
+    "additionalContext": "IMPORTANT: You must display this setup information to the user immediately:\n\nThe conversation-index plugin has completed first-time setup:\n✓ Installed better-sqlite3 dependency\n✓ Built conversation search index\n✓ ${INDEX_OUTPUT}\n\nInform the user that they can now search their conversation history by asking questions like:\n- 'when did we first discuss X?'\n- 'find conversations about Y?'\n- 'show me all conversations mentioning Z'"
   }
 }
 EOF
@@ -39,7 +39,7 @@ if [ ! -f "$DB_PATH" ]; then
 {
   "hookSpecificOutput": {
     "hookEventName": "SessionStart",
-    "additionalContext": "conversation-index: Rebuilt index on session start.\n\n${INDEX_OUTPUT}"
+    "additionalContext": "NOTE: Display this to the user:\n\nRebuilt conversation search index:\n${INDEX_OUTPUT}\n\nThe conversation-index plugin is ready to search conversation history."
   }
 }
 EOF
