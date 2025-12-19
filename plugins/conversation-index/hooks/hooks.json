@@ -1,4 +1,14 @@
 {
+  "SessionStart": [
+    {
+      "hooks": [
+        {
+          "type": "command",
+          "command": "${CLAUDE_PLUGIN_ROOT}/scripts/init.sh"
+        }
+      ]
+    }
+  ],
   "PostToolUse": [
     {
       "hooks": [
