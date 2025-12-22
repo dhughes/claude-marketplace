@@ -1,0 +1,12 @@
+{
+  "name": "conversation-loader",
+  "version": "0.1.0",
+  "description": "Load and display the full content of previous Claude Code conversations",
+  "author": {
+    "name": "Doug Hughes",
+    "email": "doug@doughughes.net"
+  },
+  "license": "MIT",
+  "keywords": ["conversation", "history", "context", "load"],
+  "skills": "./skills"
+}
