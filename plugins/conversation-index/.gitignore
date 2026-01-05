@@ -1,0 +1,23 @@
+# Go build cache
+.go-cache/
+.build/
+
+# npm cache
+.npm-cache/
+node_modules/
+
+# Test artifacts
+test-home/
+coverage.out
+coverage.html
+
+# Test scripts
+test-indexer.sh
+
+# Database files (users create their own)
+*.db
+*.db-shm
+*.db-wal
+
+# OS files
+.DS_Store

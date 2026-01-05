@@ -1,12 +1,12 @@
 {
   "name": "conversation-index",
-  "version": "0.3.1",
-  "description": "Index and search conversations in Claude Code using SQLite FTS5",
+  "version": "1.0.0",
+  "description": "Index and search conversations in Claude Code using SQLite FTS5 (Go implementation)",
   "author": {
     "name": "Doug Hughes",
     "email": "doug.hughes@ezcater.com"
   },
   "license": "MIT",
-  "keywords": ["search", "conversation", "index", "fts", "history"],
+  "keywords": ["search", "conversation", "index", "fts", "history", "go"],
   "skills": "./skills"
 }

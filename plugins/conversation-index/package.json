@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "better-sqlite3": "^12.5.0"
+    "sql.js-fts5": "^1.4.0"
   }
 }

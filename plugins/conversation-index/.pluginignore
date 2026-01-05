@@ -10,3 +10,17 @@ package-lock.json
 # Development files
 .DS_Store
 *.log
+
+# Go build artifacts
+.go-cache/
+.build/
+test-home/
+coverage.out
+coverage.html
+
+# Backup Node.js scripts
+scripts/indexer-node.sh
+skills/conversation-search/scripts/search-node.sh
+
+# Test scripts
+test-indexer.sh
