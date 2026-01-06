@@ -1,6 +1,6 @@
 {
   "name": "conversation-index",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Index and search conversations in Claude Code using SQLite FTS5 (Go implementation)",
   "author": {
     "name": "Doug Hughes",
