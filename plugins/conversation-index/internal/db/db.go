@@ -31,7 +31,8 @@ type sqliteDB struct {
 // Open opens a SQLite database at the given path
 func Open(path string) (DB, error) {
 	// Add mode=rwc to ensure read-write-create access
-	connStr := path + "?mode=rwc"
+	// Add busy_timeout to handle concurrent access (wait up to 5 seconds)
+	connStr := path + "?mode=rwc&_busy_timeout=5000"
 	conn, err := sql.Open("sqlite", connStr)
 	if err != nil {
 		return nil, fmt.Errorf("failed to open database: %w", err)
