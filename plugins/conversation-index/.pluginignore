@@ -6,6 +6,8 @@ package-lock.json
 *.db
 *.db-shm
 *.db-wal
+*.lock
+*.last-run
 
 # Development files
 .DS_Store
