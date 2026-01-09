@@ -47,6 +47,58 @@ Or use the search script directly:
 - `sqlite3` (pre-installed on macOS/Linux)
 - `jq` (install: `brew install jq`)
 
+### conversation-loader
+
+Load the full content of previous Claude Code conversations into current context.
+
+**Features:**
+- Resume previous conversations with full context
+- Works with conversation IDs from conversation-index
+- Loads complete conversation history including code and artifacts
+
+**Install:**
+```bash
+/plugin install conversation-loader@doug-marketplace
+```
+
+**Usage:**
+```
+You: "Load conversation abc-123-def"
+```
+
+### ezcater-research
+
+Comprehensive ezCater research toolkit for investigating codebases, architectural decisions, and project histories.
+
+**Features:**
+- Deep research agent (Opus) for complex multi-source investigations
+- Lightweight research skill for straightforward searches
+- Integrates with Glean, Atlassian (Jira/Confluence), GitHub, and Git
+- Comprehensive documentation with working examples
+- 4 detailed reference guides (Glean, atl CLI, gh CLI, git analysis)
+- 3 complete research workflow examples
+
+**Install:**
+```bash
+/plugin install ezcater-research@doug-marketplace
+```
+
+**Usage:**
+For deep research:
+- "Do deep research on why Liberty uses Omnichannel for feature flags"
+- "I need deep research on how seeders work in DM-rails"
+
+For lighter research:
+- "Find recent PRs about order management in ez-rails"
+- "What's the history of the authentication refactor?"
+- "How does the order state machine work?"
+
+**Requirements:**
+- Glean MCP server (for ezCater internal docs)
+- `atl` CLI (for Jira/Confluence access)
+- `gh` CLI (for GitHub operations)
+- `git` (for code history analysis)
+
 ## Development
 
 ### Structure

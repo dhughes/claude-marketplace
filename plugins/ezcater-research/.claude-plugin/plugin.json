@@ -1,0 +1,19 @@
+{
+  "name": "ezcater-research",
+  "version": "0.1.0",
+  "description": "Comprehensive ezCater research toolkit for investigating codebases, architectural decisions, and project histories using Glean, Atlassian, and GitHub",
+  "author": {
+    "name": "Doug Hughes",
+    "email": "doughughes@users.noreply.github.com"
+  },
+  "keywords": [
+    "ezcater",
+    "research",
+    "investigation",
+    "glean",
+    "atlassian",
+    "git-history",
+    "architecture"
+  ],
+  "license": "MIT"
+}
