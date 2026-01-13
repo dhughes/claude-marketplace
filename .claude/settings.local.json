@@ -9,7 +9,12 @@
       "WebFetch(domain:code.claude.com)",
       "WebFetch(domain:claude-plugins.dev)",
       "WebFetch(domain:proxy.golang.org)",
-      "WebFetch(domain:modernc.org)"
+      "WebFetch(domain:modernc.org)",
+      "Skill(plugin-dev:create-plugin)",
+      "Skill(plugin-dev:plugin-structure)",
+      "Skill(conversation-loader:load-conversation)",
+      "Skill(plugin-dev:agent-development)",
+      "Skill(plugin-dev:skill-development)"
     ]
   }
 }
