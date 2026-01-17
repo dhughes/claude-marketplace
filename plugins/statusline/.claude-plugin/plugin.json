@@ -1,0 +1,10 @@
+{
+  "name": "statusline",
+  "version": "0.5.1",
+  "description": "Modular, pluggable statusline system for Claude Code with context-aware customization",
+  "author": {
+    "name": "Doug Hughes"
+  },
+  "keywords": ["statusline", "status", "customization", "context"],
+  "license": "MIT"
+}

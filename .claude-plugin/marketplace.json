@@ -53,6 +53,15 @@
       "author": {
         "name": "Doug Hughes"
       }
+    },
+    {
+      "name": "statusline",
+      "source": "./plugins/statusline",
+      "description": "Modular, pluggable statusline system for Claude Code with context-aware customization",
+      "version": "0.5.1",
+      "author": {
+        "name": "Doug Hughes"
+      }
     }
   ]
 }
