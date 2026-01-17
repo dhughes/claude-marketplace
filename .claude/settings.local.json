@@ -14,7 +14,9 @@
       "Skill(plugin-dev:plugin-structure)",
       "Skill(conversation-loader:load-conversation)",
       "Skill(plugin-dev:agent-development)",
-      "Skill(plugin-dev:skill-development)"
+      "Skill(plugin-dev:skill-development)",
+      "Bash(python3:*)",
+      "Bash(wc:*)"
     ]
   }
 }

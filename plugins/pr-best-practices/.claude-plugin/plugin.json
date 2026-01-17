@@ -1,0 +1,10 @@
+{
+  "name": "pr-best-practices",
+  "version": "0.2.0",
+  "description": "Enforces PR best practices: include ticket numbers, always create as draft, and use GitHub PR templates when available",
+  "author": {
+    "name": "Doug Hughes",
+    "email": "doughughes@gmail.com"
+  },
+  "keywords": ["pr", "pull-request", "github", "workflow", "draft", "ticket", "jira"]
+}

@@ -4,7 +4,7 @@
   "description": "Comprehensive ezCater research toolkit for investigating codebases, architectural decisions, and project histories using Glean, Atlassian, and GitHub",
   "author": {
     "name": "Doug Hughes",
-    "email": "doughughes@users.noreply.github.com"
+    "email": "doug.hughes@ezcater.com"
   },
   "keywords": [
     "ezcater",

@@ -4,7 +4,7 @@
   "description": "Augments feature development workflows with test-driven development practices, ensuring tests are written early and explicitly planned",
   "author": {
     "name": "Doug Hughes",
-    "email": "doug.hughes@ezcater.com"
+    "email": "doug@doughughes.net"
   },
   "license": "MIT",
   "keywords": ["tdd", "testing", "feature-dev", "test-coverage", "best-practices"],
