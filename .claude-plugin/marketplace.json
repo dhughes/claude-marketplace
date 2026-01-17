@@ -39,7 +39,16 @@
     {
       "name": "tdd-feature-dev",
       "source": "./plugins/tdd-feature-dev",
-      "description": "Augments feature development workflows with test-driven development practices, ensuring tests are written early and explicitly planned",
+      "description": "Invoked BEFORE feature-dev workflows to establish TDD practices. Ensures tests are written early and planned as explicit, separate TODO items alongside implementation.",
+      "version": "0.2.0",
+      "author": {
+        "name": "Doug Hughes"
+      }
+    },
+    {
+      "name": "github-pr",
+      "source": "./plugins/github-pr",
+      "description": "Enhances GitHub PR creation with template integration, ticket discovery, and why-focused descriptions. Always creates PRs as drafts.",
       "version": "0.1.0",
       "author": {
         "name": "Doug Hughes"

@@ -1,10 +1,37 @@
 # Claude Code Marketplace - Plugin Development Guide
 
+**This is a MARKETPLACE repository containing multiple Claude Code plugins.** All plugins in this marketplace are stored in the `plugins/` directory at the repository root. Each plugin is a separate subdirectory within `plugins/`.
+
+## Marketplace Structure
+
+```
+claude-marketplace/
+├── .claude-plugin/
+│   └── marketplace.json     # Marketplace registry
+├── plugins/                 # ALL PLUGINS GO HERE
+│   ├── plugin-name-1/       # Individual plugin directory
+│   │   ├── .claude-plugin/
+│   │   │   └── plugin.json
+│   │   ├── commands/
+│   │   ├── agents/
+│   │   └── skills/
+│   ├── plugin-name-2/       # Another plugin
+│   │   └── ...
+│   └── plugin-name-3/       # Yet another plugin
+│       └── ...
+└── CLAUDE.md                # This file
+```
+
+**CRITICAL: When creating new plugins, always create them as subdirectories within `plugins/`.**
+
 This project is a marketplace of Claude Code plugins designed to extend Claude's capabilities with specialized tools, agents, skills, and automation.
 
 ## Plugin Development Workflow
 
-**CRITICAL: Always use the `plugin-dev` plugin for creating new plugins.**
+**CRITICAL REQUIREMENTS:**
+1. **Always use the `plugin-dev` plugin for creating new plugins.**
+2. **Always create plugins in the `plugins/` directory.**
+3. **Always maintain `.claude-plugin/marketplace.json` when creating or updating plugins** (add entries, bump versions, update descriptions).
 
 The `plugin-dev` plugin provides comprehensive support for plugin development:
 
@@ -47,11 +74,13 @@ To start creating a plugin, run `/create-plugin` and follow the guided workflow.
 
 ---
 
-## Plugin Structure Overview
+## Individual Plugin Structure
 
-### Directory Layout
+**Note**: The directory layout below shows the structure of a single plugin within the marketplace. Each plugin lives in its own directory under `plugins/` (e.g., `plugins/my-plugin/`).
+
+### Directory Layout (for a single plugin)
 ```
-my-plugin/
+plugins/my-plugin/           # Plugin lives inside plugins/ directory
 ├── .claude-plugin/
 │   └── plugin.json          # Required manifest (ONLY file in .claude-plugin/)
 ├── commands/                # Slash commands (optional)
@@ -69,7 +98,9 @@ my-plugin/
     └── validate.sh
 ```
 
-**Critical rule**: Only `plugin.json` goes inside `.claude-plugin/`. All other directories must be at plugin root.
+**Critical rules**:
+- All plugins MUST be created as subdirectories within `plugins/` at the marketplace root
+- Only `plugin.json` goes inside `.claude-plugin/`. All other directories must be at the plugin root.
 
 ### Environment Variables
 - `${CLAUDE_PLUGIN_ROOT}`: Absolute path to plugin directory (use in scripts, hooks, MCP configs)
@@ -263,10 +294,12 @@ skills/
 4. Use the `plugin-dev` skills to understand component architecture before building
 
 ### Structure
-1. Follow the standard plugin directory structure (see above)
-2. Use `${CLAUDE_PLUGIN_ROOT}` for relative paths in scripts
-3. Follow auto-discovery conventions for file naming
-4. Only `plugin.json` goes in `.claude-plugin/` directory
+1. **CRITICAL: Create all new plugins in the `plugins/` directory** at the marketplace root
+2. Each plugin must be its own subdirectory (e.g., `plugins/my-plugin/`)
+3. Follow the standard plugin directory structure within each plugin directory (see Individual Plugin Structure above)
+4. Use `${CLAUDE_PLUGIN_ROOT}` for relative paths in scripts
+5. Follow auto-discovery conventions for file naming
+6. Only `plugin.json` goes in `.claude-plugin/` directory
 
 ### Implementation
 1. Keep components focused and single-purpose
@@ -274,6 +307,11 @@ skills/
 3. Provide comprehensive examples in agent/skill system prompts
 4. Test each component independently before integration
 5. Use YAML frontmatter for metadata and configuration
+6. **After creating or updating a plugin, immediately update `.claude-plugin/marketplace.json`**:
+   - Add new plugin entries when creating plugins
+   - Bump version numbers when updating plugins
+   - Update descriptions when functionality changes
+   - Maintain metadata synchronization
 
 ### Quality Standards
 1. Validate plugins using the `plugin-validator` agent
@@ -281,12 +319,14 @@ skills/
 3. Include example usage in skill/command descriptions
 4. Test with real-world scenarios before publishing
 5. Follow the principle of progressive disclosure in skills
+6. **Verify `.claude-plugin/marketplace.json` is valid JSON after every change**
 
 ### Integration
-1. Register plugins in `.claude-plugin/marketplace.json`
-2. Include proper version numbers (semantic versioning)
-3. Provide clear installation instructions if needed
-4. Document any dependencies or prerequisites
+1. **CRITICAL: Immediately register new plugins in `.claude-plugin/marketplace.json`**
+2. **CRITICAL: Update marketplace.json whenever plugin versions or descriptions change**
+3. Include proper version numbers (semantic versioning)
+4. Provide clear installation instructions if needed
+5. Document any dependencies or prerequisites
 
 ## Best Practices
 
@@ -326,20 +366,38 @@ skills/
 
 1. **Ideation** - Define purpose and components
 2. **Planning** - Use plugin-dev skills to research and plan
-3. **Creation** - Run `/create-plugin` or manually create structure
+3. **Creation** - Run `/create-plugin` or manually create structure **in the `plugins/` directory**
 4. **Development** - Implement components using plugin-dev agents
 5. **Validation** - Test with `plugin-validator` agent
-6. **Registration** - Add to marketplace.json
+6. **Registration** - Add to marketplace.json at the marketplace root (`.claude-plugin/marketplace.json`)
 7. **Iteration** - Refine based on real-world usage
 
-## Marketplace Registration
+## Marketplace Registration & Maintenance
 
-When ready to add a plugin to the marketplace:
+**CRITICAL: Claude must actively maintain the `.claude-plugin/marketplace.json` file whenever plugins are created, updated, or modified.**
 
-1. Ensure plugin.json has complete metadata (name, version, description, author)
-2. Add entry to `.claude-plugin/marketplace.json`
-3. Test plugin installation and functionality
-4. Document any special configuration or setup requirements
+### When Creating a New Plugin:
+1. Ensure the plugin is located in `plugins/<plugin-name>/`
+2. Ensure plugin.json has complete metadata (name, version, description, author)
+3. **Immediately add an entry to `.claude-plugin/marketplace.json`** at the marketplace root
+4. Test plugin installation and functionality
+5. Document any special configuration or setup requirements
+
+### When Updating an Existing Plugin:
+1. **Update the version number** in the plugin's `plugin.json` (follow semantic versioning)
+2. **Update the version number** in `.claude-plugin/marketplace.json` to match
+3. **Update the description** in `.claude-plugin/marketplace.json` if the plugin's functionality has changed
+4. Update any other relevant metadata (keywords, dependencies, etc.)
+5. Test the updated plugin thoroughly
+
+### Maintenance Responsibilities:
+- **Version Bumping**: Always increment version numbers appropriately:
+  - **Major** (x.0.0): Breaking changes or major new features
+  - **Minor** (0.x.0): New features, backward-compatible
+  - **Patch** (0.0.x): Bug fixes, minor tweaks
+- **Description Updates**: Keep descriptions accurate and reflective of current functionality
+- **Metadata Sync**: Ensure `.claude-plugin/marketplace.json` stays in sync with individual plugin.json files
+- **Registry Integrity**: Verify marketplace.json remains valid JSON after every change
 
 ## Plugin Manifest (plugin.json)
 

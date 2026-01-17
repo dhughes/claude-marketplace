@@ -1,6 +1,6 @@
 {
   "name": "tdd-feature-dev",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Augments feature development workflows with test-driven development practices, ensuring tests are written early and explicitly planned",
   "author": {
     "name": "Doug Hughes",

@@ -1,7 +1,7 @@
 ---
 name: tdd-feature-development
-description: This skill should be used when the user asks to "implement a feature", "build new functionality", "add a feature", invokes feature-dev, or discusses feature development workflows. Ensures test-driven development practices are followed by requiring tests to be written early and explicitly included as separate steps in implementation plans.
-version: 0.1.0
+description: "CRITICAL: When the user asks to implement/build/add a feature or mentions feature development, invoke this skill FIRST (BEFORE invoking feature-dev or any other feature development workflow). This establishes test-driven development requirements and ensures tests are written early and explicitly planned as separate steps. Do NOT wait until feature-dev is already running - invoke this BEFORE starting any feature development workflow."
+version: 0.2.0
 ---
 
 # TDD Feature Development
@@ -17,11 +17,23 @@ When implementing features, tests should not be an afterthought. This skill ensu
 3. Testing principles are followed throughout the development process
 4. Code is designed to be testable from the start
 
+## Critical Workflow Integration
+
+**IMPORTANT:** This skill should be invoked BEFORE any feature development workflow begins (such as feature-dev). The intended flow is:
+
+1. **User requests feature development** (e.g., "implement a login feature")
+2. **Invoke tdd-feature-development FIRST** (this skill) to establish TDD requirements
+3. **Then invoke feature-dev** (or other feature development workflow) with TDD principles in mind
+4. **Follow the guidelines below** throughout the feature development process
+
+Do NOT invoke this skill after feature-dev has already started - it will be too late to integrate TDD principles into the planning phase.
+
 ## When to Use This Skill
 
 Apply these guidelines when:
-- Implementing any new feature or functionality
-- Working through a feature development workflow (like feature-dev)
+- User requests implementing any new feature or functionality
+- User asks to build, add, or create features
+- BEFORE invoking feature-dev or similar workflows
 - Creating implementation plans or TODO lists for code changes
 - Designing architecture for new features
 
