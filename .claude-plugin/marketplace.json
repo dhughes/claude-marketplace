@@ -35,6 +35,15 @@
       "author": {
         "name": "Doug Hughes"
       }
+    },
+    {
+      "name": "tdd-feature-dev",
+      "source": "./plugins/tdd-feature-dev",
+      "description": "Augments feature development workflows with test-driven development practices, ensuring tests are written early and explicitly planned",
+      "version": "0.1.0",
+      "author": {
+        "name": "Doug Hughes"
+      }
     }
   ]
 }

@@ -99,6 +99,42 @@ For lighter research:
 - `gh` CLI (for GitHub operations)
 - `git` (for code history analysis)
 
+### tdd-feature-dev
+
+Augments feature development workflows with test-driven development practices. Ensures tests are written early and explicitly planned as separate TODO items.
+
+**Features:**
+- Automatically composes with feature-dev workflows
+- Tests as explicit, separate TODO items (not buried in implementation)
+- TDD-ish approach: tests written alongside code
+- Strong emphasis on testing behavior, not implementation
+- Never test private functions
+- 80% test coverage target
+- Project-agnostic (works with any testing framework)
+
+**Install:**
+```bash
+/plugin install tdd-feature-dev@doug-marketplace
+```
+
+**Usage:**
+The skill automatically loads when you're implementing features:
+```
+/feature-dev Add user authentication
+```
+
+The TDD skill will compose with feature-dev, ensuring:
+- Tests are added as explicit TODO items
+- Tests are written before/alongside implementation
+- Tests focus on behavior and public APIs
+- Coverage targets are met
+
+**Trigger phrases:**
+- "implement a feature"
+- "build new functionality"
+- "add a feature"
+- Any use of `/feature-dev`
+
 ## Development
 
 ### Structure
