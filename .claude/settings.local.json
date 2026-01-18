@@ -16,7 +16,19 @@
       "Skill(plugin-dev:agent-development)",
       "Skill(plugin-dev:skill-development)",
       "Bash(python3:*)",
-      "Bash(wc:*)"
+      "Bash(wc:*)",
+      "Bash(chmod:*)",
+      "Skill(plugin-dev:command-development)",
+      "Bash(make:*)",
+      "Bash(./scripts/statusline.sh:*)",
+      "Bash(file:*)",
+      "Bash(test:*)",
+      "Skill(plugin-dev:hook-development)",
+      "Bash(/Users/doughughes/Projects/Personal/claude-marketplace/plugins/statusline/scripts/statusline.sh)",
+      "Bash(./plugins/statusline/scripts/statusline.sh:*)",
+      "Skill(atlassian-cli:atlassian-usage)",
+      "Bash(atl jira search-jql:*)",
+      "Bash(atl jira get-issue:*)"
     ]
   }
 }
