@@ -1,0 +1,11 @@
+{
+  "name": "atlassian-cli",
+  "version": "0.1.0",
+  "description": "Interact with Jira and Confluence using the atl CLI tool",
+  "author": {
+    "name": "Doug Hughes",
+    "email": "doug@doughughes.net"
+  },
+  "repository": "https://github.com/dhughes/atlassian-cli",
+  "keywords": ["atlassian", "jira", "confluence", "cli", "issues", "documentation"]
+}
