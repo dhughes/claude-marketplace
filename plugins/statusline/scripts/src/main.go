@@ -37,7 +37,7 @@ func main() {
 	platform := fmt.Sprintf("%s-%s", runtime.GOOS, runtime.GOARCH)
 
 	// List of tools to run (hardcoded for now, will be config-driven later)
-	tools := []string{"status-directory", "status-git-branch"}
+	tools := []string{"status-directory", "status-git-branch", "status-model"}
 
 	var outputs []ToolOutput
 
