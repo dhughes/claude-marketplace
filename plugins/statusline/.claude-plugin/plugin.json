@@ -1,6 +1,6 @@
 {
   "name": "statusline",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "description": "Modular, pluggable statusline system for Claude Code with context-aware customization",
   "author": {
     "name": "Doug Hughes"
