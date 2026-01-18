@@ -71,6 +71,15 @@
       "author": {
         "name": "Doug Hughes"
       }
+    },
+    {
+      "name": "ci-monitor",
+      "source": "./plugins/ci-monitor",
+      "description": "Monitor GitHub PR CI/CD checks until completion with audio notification via text-to-speech",
+      "version": "1.0.0",
+      "author": {
+        "name": "Doug Hughes"
+      }
     }
   ]
 }
