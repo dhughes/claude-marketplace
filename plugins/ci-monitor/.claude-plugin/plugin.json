@@ -1,0 +1,9 @@
+{
+  "name": "ci-monitor",
+  "version": "1.0.0",
+  "description": "Monitor GitHub PR CI/CD checks with audio notifications when checks complete",
+  "author": {
+    "name": "Doug Hughes"
+  },
+  "keywords": ["github", "ci", "cd", "monitoring", "pr", "checks", "notifications"]
+}
