@@ -80,9 +80,9 @@ When all checks complete:
    URL: [pr_url]
    ```
 
-2. Play audio announcement (if `say` command available):
+2. Play audio announcement:
    ```bash
-   say "GitHub [repo name] PR [number] completed CI successfully"
+   say "GitHub [repo-name] PR [pr-number] completed CI successfully" 2>/dev/null
    ```
 
 #### On Failure
@@ -105,24 +105,21 @@ When all checks complete:
 
 3. Print links to failed check details
 
-4. Play audio announcement (if `say` command available):
+4. Play audio announcement:
    ```bash
-   say "GitHub [repo name] PR [number] completed CI unsuccessfully"
+   say "GitHub [repo-name] PR [pr-number] completed CI unsuccessfully" 2>/dev/null
    ```
 
 ## Audio Notification
 
-Use macOS `say` command for text-to-speech notifications. Check availability before use:
+Use macOS `say` command directly with stderr suppressed:
 
 ```bash
-command -v say >/dev/null 2>&1
+say "GitHub [repo-name] PR [pr-number] completed CI successfully" 2>/dev/null
+say "GitHub [repo-name] PR [pr-number] completed CI unsuccessfully" 2>/dev/null
 ```
 
-If `say` is not available (non-macOS systems), skip audio notification silently without error.
-
-The announcement format:
-- Success: "GitHub [repository name] PR [number] completed CI successfully"
-- Failure: "GitHub [repository name] PR [number] completed CI unsuccessfully"
+The `2>/dev/null` silently ignores errors on systems without `say`.
 
 Use the repository name from `gh pr view --json headRepository`, extracting just the repo name (not owner/repo).
 
